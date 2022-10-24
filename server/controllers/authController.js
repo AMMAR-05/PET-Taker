@@ -16,21 +16,19 @@ exports.signup = async (req, res, next) => {
   const { firstName, lastName, userName, email, password } = req.body;
 
   let imageUrl;
-  if (req.file.path) {
-    // get Image path
-    const imagePath = req.file.path;
+  // get Image path
+  const imagePath = req.file.path;
 
-    // send image to cloudinary
-    const uploader = async (path) =>
-      await cloudinary.uploads(path, process.env.CLOUDINARY_IMAGE_STORAGE_USER);
+  // send image to cloudinary
+  const uploader = async (path) =>
+    await cloudinary.uploads(path, process.env.CLOUDINARY_IMAGE_STORAGE_USER);
 
-    // get the cloudinary image link
-    const { url } = await uploader(imagePath);
-    imageUrl = url;
+  // get the cloudinary image link
+  const { url } = await uploader(imagePath);
+  imageUrl = url;
 
-    // remove the image from uploads file
-    fs.unlinkSync(imagePath);
-  }
+  // remove the image from uploads file
+  fs.unlinkSync(imagePath);
 
   // Check if user already exist
   let existingUser;
