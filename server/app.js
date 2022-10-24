@@ -45,13 +45,13 @@ app.use("/api/v1/signup", SignupRoute);
 app.use("/api/v1/login", LoginRoute);
 
 // Default Error Middelware
-app.use((error, req, res, next) => {
-  if (res.headerSent) {
-  }
-  res.status(error.code || 500).json({
-    message: error.message || "An unknown error occurred",
-  });
-});
+// app.use((error, req, res, next) => {
+//   if (res.headerSent) {
+//   }
+//   res.status(error.code || 500).json({
+//     message: error.message || "An unknown error occurred",
+//   });
+// });
 
 // Unhandled routes
 app.all("*", (req, res, next) => {
