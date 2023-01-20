@@ -7,9 +7,10 @@ function OneOfferItems({ offerItems }) {
   return (
     <Box
       sx={{
-        width: "40rem",
-        marginLeft: "5rem",
-        paddingTop: "3rem",
+        width: { xs: "90%", md: "50%" },
+        margin: { xs: "auto", md: "0" },
+        paddingTop: { xs: "3rem" },
+        paddingLeft: { md: "1rem" },
       }}
     >
       {/* Image */}

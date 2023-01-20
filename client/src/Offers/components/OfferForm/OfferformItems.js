@@ -129,8 +129,8 @@ function OfferformItems() {
     form: {
       paddingTop: "2rem",
       paddingBottom: "2rem",
-      paddingLeft: "48px",
-      width: "50rem",
+      paddingLeft: { xs: "24px", md: "48px" },
+      width: { xs: "100%", md: "50rem" },
     },
     offerType: {
       width: "20rem",

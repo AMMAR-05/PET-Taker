@@ -22,8 +22,13 @@ function NewOffer() {
     >
       <Box
         sx={{
-          paddingLeft: "4rem",
-          background: "linear-gradient(105deg, #e6e4e4  70%, #30292F 40%)",
+          paddingLeft: { xs: "0", md: "4rem" },
+
+          background: {
+            xs: "linear-gradient(105deg, #e6e4e4  95%, #30292F 40%)",
+            sm: "linear-gradient(105deg, #e6e4e4  85%, #30292F 40%)",
+            md: "linear-gradient(105deg, #e6e4e4  70%, #30292F 40%)",
+          },
         }}
       >
         <OfferForm />

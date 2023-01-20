@@ -18,7 +18,7 @@ function UserOfferList(props) {
           }}
           open={true}
         >
-          <Typography sx={{ fontSize: "1.5rem" }}>
+          <Typography sx={{ fontSize: "1rem" }}>
             You have no offers yet, Please create one.
           </Typography>
           <Link to="/newoffer">
@@ -29,9 +29,7 @@ function UserOfferList(props) {
                 padding: "1rem",
                 backgroundColor: "#3c52b2",
                 borderRadius: "8px",
-
                 color: "#fff",
-
                 "&:hover": {
                   backgroundColor: "rgb(7, 177, 77, 0.42)",
                 },

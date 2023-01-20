@@ -11,9 +11,10 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import { AuthContext } from "../Context/authContext";
 import { Container } from "@mui/system";
+import { AuthContext } from "../Context/authContext";
+
+import logoImage from "../../../src/shared/Images/first.png";
 
 const linkStyle = {
   link: {
@@ -69,12 +70,17 @@ function MainNavigation(props) {
       <Container maxWidth="xl" disableGutters sx={{ margin: 0 }}>
         <Toolbar disableGutters>
           {/* Big Screen */}
-          <AdbIcon
+          <Box
+            component="img"
             sx={{
+              width: "3.5rem",
               display: { xs: "none", md: "flex" },
               mr: 1,
             }}
+            src={logoImage}
+            alt="logo"
           />
+
           <Typography
             variant="h1"
             noWrap
@@ -169,8 +175,18 @@ function MainNavigation(props) {
               </MenuItem>
             </Menu>
           </Box>
+          <Box
+            component="img"
+            sx={{
+              width: "2.5rem",
+              display: { xs: "flex", md: "none" },
+              mr: 1,
+            }}
+            src={logoImage}
+            alt="logo"
+          />
 
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" } }} />
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" } }} /> */}
           <Typography
             variant="h1"
             noWrap

@@ -1,6 +1,7 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
+import Progress from "../../../shared/UIs/Progress/Progress";
 import OffersByUserList from "../../components/Offers/OffersByUserList";
 
 function OffersByUser(props) {
@@ -31,24 +32,26 @@ function OffersByUser(props) {
     fetchOffers();
   }, [creatorId]);
 
-  console.log();
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
-        marginRight: "5rem",
-        paddingTop: "3rem",
+        width: { xs: "90%", md: "50%" },
+        margin: { xs: "auto", md: "0" },
+        paddingTop: { xs: "3rem" },
+        paddingLeft: { md: "1rem" },
       }}
     >
-      <Typography variant="h7" marginBottom="0.4rem">
-        MORE OFFERS
-      </Typography>
-
       {offersByUser.length === 0 ? (
-        <Typography>Offers not found</Typography>
+        <Progress />
       ) : (
-        <OffersByUserList offersByUser={offersByUser} />
+        <>
+          <Typography variant="h7" marginBottom="0.4rem">
+            MORE OFFERS
+          </Typography>
+          <OffersByUserList offersByUser={offersByUser} />
+        </>
       )}
     </Box>
   );

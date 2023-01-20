@@ -1,9 +1,10 @@
 import { useState, useCallback, useEffect, lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { AuthContext } from "./shared/Context/authContext";
-import "./App.css";
 import UserProfile from "./Users/pages/UserProfile";
 // import UpdateOffer from "./Offers/pages/UpdateOffer/UpdateOffer";
+
+import "./App.css";
 
 const Offers = lazy(() => import("./Offers/pages/Offers/Offers"));
 const NewOffer = lazy(() => import("./Offers/pages/NewOffer/NewOffer"));

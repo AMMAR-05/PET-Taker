@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Progress from "../../../shared/UIs/Progress/Progress";
 import OneOfferItems from "../../components/Offers/OneOfferItems";
 import OffersByUser from "../OffersByUser/OffersByUser";
 
@@ -29,13 +30,16 @@ function OneOffer() {
   return (
     <Box
       sx={{
-        display: "flex",
-        justifyContent: "space-between",
+        display: { md: "flex" },
+        // justifyContent: { md: "space-between" },
+        // paddingRight: { md: "3rem" },
+        paddingX: { md: "3rem" },
       }}
     >
       {offerItems.length === 0 ? (
-        <Typography>Offer not found</Typography>
+        <Progress />
       ) : (
+        // <Typography>Offer not found</Typography>
         <OneOfferItems offerItems={offerItems} />
       )}
 
